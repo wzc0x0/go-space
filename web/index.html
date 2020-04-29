@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div>hello</div>
+    <button onclick="logonHandle()">登录</button>
+    <button onclick="getHandle()">get</button>
+    <script>
+        let uriPrefix = "http://localhost:8090";
+        let logonHandle = function() {
+            let fd = new window.FormData();
+            fd.append("name","创世神1");
+            fd.append("password","123456");
+            fetch(uriPrefix + "/logon",{
+                method:"POST",
+                body:fd,
+                credentials: "include"
+            }).then(res => res.json()).then(res => {
+                console.log(res)
+            }).catch(err => {
+                console.log(err)
+            })
+        };
+
+        let getHandle = function () {
+            fetch(uriPrefix + "/get",{
+                method:"GET",
+                credentials: "include"
+            }).then(res => res.json()).then(res => {
+                console.log(res)
+            }).catch(err => {
+                console.log(err)
+            });
+        }
+
+    </script>
+</body>
+</html>

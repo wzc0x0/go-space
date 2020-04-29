@@ -1,0 +1,24 @@
+server:
+  host: "localhost"
+  port: ":8090"
+
+database:
+  type: "mysql"
+  name: "yii2basic"
+  user: "root"
+  password: "rootmysql"
+  host: ""
+  maxIdleConns: 10
+
+cookie:
+  path: "/"
+  domain: "localhost"
+  maxAge: 3600
+  secure: false
+  httpOnly: true
+
+weChat:
+  appId: "wxa0d289e77d610d21"
+  appSecret: "5c6fb693420dcfd74a428eb031a040a2"
+  redirectURL: "http://868881d4.nat.nsloop.com/weChatGetToken"
+
